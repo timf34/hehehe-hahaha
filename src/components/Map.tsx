@@ -181,6 +181,6 @@ export default function Map() {
     }, [])
 
     return (
-        <div ref={mapContainer} className="w-full h-[70vh] rounded-lg" />
+        <div ref={mapContainer} className="w-full h-full rounded-lg" />
     )
 }
