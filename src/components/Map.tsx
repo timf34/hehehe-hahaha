@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import { memoryLocations } from '@/data/hehehe'
-import type { MemoryLocation } from '@/types'
+import type { Feature, Point, FeatureCollection, GeoJSON } from 'geojson'
 
 interface MemoryFeatureProperties {
     id: string;
@@ -39,7 +39,7 @@ export default function Map() {
         if (!map.current) return
 
         // Convert memory locations to GeoJSON
-        const geojson = {
+        const geojson: FeatureCollection<Point, MemoryFeatureProperties> = {
             type: 'FeatureCollection',
             features: memoryLocations.map(location => ({
                 type: 'Feature',
@@ -61,7 +61,7 @@ export default function Map() {
             // Add the source with clustering enabled
             mapInstance.addSource('memories', {
                 type: 'geojson',
-                data: geojson as any,
+                data: geojson,
                 cluster: true,
                 clusterMaxZoom: 14,
                 clusterRadius: 50
@@ -122,9 +122,9 @@ export default function Map() {
             mapInstance.on('click', 'unclustered-point', (e) => {
                 if (!e.features?.[0]) return
 
-                const coordinates = (e.features[0].geometry as any).coordinates.slice()
-                const properties = e.features[0].properties as MemoryFeatureProperties
-                const { id, name, year } = properties
+                const feature = e.features[0] as unknown as Feature<Point, MemoryFeatureProperties>;
+                const [lng, lat] = feature.geometry.coordinates;
+                const { id, name, year } = feature.properties;
 
                 // Close any existing popups
                 Object.values(popups.current).forEach(popup => popup.remove())
@@ -135,7 +135,7 @@ export default function Map() {
                     closeButton: true,
                     closeOnClick: true
                 })
-                    .setLngLat(coordinates)
+                    .setLngLat([lng, lat])
                     .setHTML(
                         `<div class="text-pink-500 p-2">
                             <h3 class="font-bold mb-1 text-lg">${name}</h3>
@@ -170,8 +170,10 @@ export default function Map() {
                     (error, zoom) => {
                         if (error || !zoom) return
 
+                        const feature = features[0] as Feature<Point>;
+                        const [lng, lat] = feature.geometry.coordinates;
                         mapInstance.easeTo({
-                            center: (features[0].geometry as any).coordinates,
+                            center: [lng, lat],
                             zoom: zoom
                         })
                     }
