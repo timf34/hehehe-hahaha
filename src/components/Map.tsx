@@ -52,7 +52,7 @@ export default function Map() {
                 color: '#FF1493',
                 clickTolerance: 3
             })
-                .setLngLat([location.longitude, location.latitude])
+                .setLngLat([location.coordinates[1], location.coordinates[0]])
                 .setPopup(popup)
                 .addTo(map.current!)
 

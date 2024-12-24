@@ -1,7 +1,6 @@
 export interface MemoryLocation {
     id: string;
     name: string;
-    latitude: number;
-    longitude: number;
+    coordinates: [number, number]; // [latitude, longitude]
     year?: string;
 }
