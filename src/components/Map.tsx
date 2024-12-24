@@ -40,7 +40,7 @@ export default function Map() {
             const popup = new mapboxgl.Popup({ 
                 offset: 25,
                 closeButton: true,
-                closeOnClick: false
+                closeOnClick: true
             }).setHTML(
                 `<div class="text-pink-500 p-2">
                     <h3 class="font-bold mb-1 text-lg">${location.name}</h3>
@@ -55,6 +55,21 @@ export default function Map() {
                 .setLngLat([location.coordinates[1], location.coordinates[0]])
                 .setPopup(popup)
                 .addTo(map.current!)
+
+            // Close other popups when opening a new one
+            const markerElement = marker.getElement();
+            if (markerElement) {
+                markerElement.addEventListener('click', () => {
+                    markers.current.forEach(m => {
+                        if (m !== marker) {
+                            const popup = m.getPopup();
+                            if (popup) {
+                                popup.remove();
+                            }
+                        }
+                    });
+                });
+            }
 
             markers.current.push(marker)
         })
