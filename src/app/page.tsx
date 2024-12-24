@@ -21,9 +21,13 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-rose-600 mb-8 flex items-center justify-center gap-2">
           Hehehe Hahaha 👀
         </h1>
-        <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-pink-200 via-rose-300 to-pink-200">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 h-[75vh]">
-            <Map />
+        <div className="p-8">
+          <div className="gradient-shadow rounded-2xl">
+            <div className="relative rounded-2xl bg-gradient-to-r from-pink-200 via-rose-300 to-pink-200 p-[2px]">
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 h-[75vh]">
+                <Map />
+              </div>
+            </div>
           </div>
         </div>
       </div>

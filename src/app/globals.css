@@ -11,6 +11,42 @@
   }
 }
 
+@layer components {
+  .gradient-shadow {
+    position: relative;
+    transform: translate(0);
+    transform-style: preserve-3d;
+  }
+
+  .gradient-shadow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    transform: translate3d(0, 0, -1px);
+    background: conic-gradient(
+      from 90deg at 40% -25%,
+      #ffc0cb,  /* pink */
+      #ffb6c1,  /* lightpink */
+      #ff69b4,  /* hotpink */
+      #ff1493,  /* deeppink */
+      #db7093,  /* palevioletred */
+      #ff69b4,  /* hotpink */
+      #ffb6c1,  /* lightpink */
+      #ffc0cb,  /* pink */
+      #ffb6c1,  /* lightpink */
+      #ff69b4,  /* hotpink */
+      #ff1493,  /* deeppink */
+      #db7093,  /* palevioletred */
+      #ff69b4,  /* hotpink */
+      #ffb6c1,  /* lightpink */
+      #ffc0cb   /* pink */
+    );
+    filter: blur(12px);
+    z-index: -1;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
