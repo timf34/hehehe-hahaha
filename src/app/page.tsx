@@ -6,16 +6,16 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white relative">
       {/* Decorative clouds */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden"> */}
         {/* Top left cloud */}
-        <div className="absolute -top-20 -left-20 w-[40rem] h-[40rem] bg-gradient-to-br from-pink-100/60 to-rose-200/60 rounded-full blur-3xl" />
+        {/* <div className="absolute -top-20 -left-20 w-[40rem] h-[40rem] bg-gradient-to-br from-pink-100/60 to-rose-200/60 rounded-full blur-3xl" />
         
         {/* Top right cloud */}
-        <div className="absolute -top-40 right-0 w-[45rem] h-[45rem] bg-gradient-to-bl from-pink-100/50 to-rose-100/50 rounded-full blur-3xl" />
+        {/* <div className="absolute -top-40 right-0 w-[45rem] h-[45rem] bg-gradient-to-bl from-pink-100/50 to-rose-100/50 rounded-full blur-3xl" />
         
         {/* Bottom cloud */}
-        <div className="absolute bottom-0 left-1/3 w-[50rem] h-[50rem] bg-gradient-to-tr from-pink-100/40 to-rose-200/40 rounded-full blur-3xl" />
-      </div>
+        {/* <div className="absolute bottom-0 left-1/3 w-[50rem] h-[50rem] bg-gradient-to-tr from-pink-100/40 to-rose-200/40 rounded-full blur-3xl" /> */} 
+      {/* </div> */}
 
       <div className="w-screen h-screen p-4">
         <h1 className="text-3xl font-bold text-rose-600 mb-2 flex items-center justify-center gap-2">
