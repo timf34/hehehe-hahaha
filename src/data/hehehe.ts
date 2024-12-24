@@ -6,7 +6,7 @@ export const memoryLocations: MemoryLocation[] = [
         name: "First Kiss at St. Stephen's Green",
         latitude: 53.3382,
         longitude: -6.2591,
-        year: 2024
+        year: '2024'
     },
     // Add more locations here!
 ]

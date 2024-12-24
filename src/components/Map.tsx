@@ -37,19 +37,24 @@ export default function Map() {
         markers.current = []
 
         memoryLocations.forEach((location: MemoryLocation) => {
-            const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-                `<div style="color: #FF1493; padding: 8px;">
-                    <h3 style="font-weight: bold; margin-bottom: 4px;">${location.name}</h3>
-                    ${location.year ? `<p style="color: #FF69B4;">💕 ${location.year}</p>` : ''}
+            const popup = new mapboxgl.Popup({ 
+                offset: 25,
+                closeButton: true,
+                closeOnClick: false
+            }).setHTML(
+                `<div class="text-pink-500 p-2">
+                    <h3 class="font-bold mb-1 text-lg">${location.name}</h3>
+                    ${location.year ? `<p class="text-pink-400">💕 ${location.year}</p>` : ''}
                 </div>`
             )
 
             const marker = new mapboxgl.Marker({
-                color: '#FF1493', // Hot pink for romance!
+                color: '#FF1493',
+                clickTolerance: 3
             })
                 .setLngLat([location.longitude, location.latitude])
                 .setPopup(popup)
-                .addTo(map.current)
+                .addTo(map.current!)
 
             markers.current.push(marker)
         })
