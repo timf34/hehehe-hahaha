@@ -3,4 +3,5 @@ export interface MemoryLocation {
     name: string;
     coordinates: [number, number]; // [latitude, longitude]
     year?: string;
+    emoji?: string;
 }
