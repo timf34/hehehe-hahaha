@@ -3,14 +3,14 @@ import type { MemoryLocation } from '@/types'
 export const memoryLocations: MemoryLocation[] = [
     {
         id: '1',
-        name: "Rose garden bucket list hehe",
+        name: "Rose garden bucket list hehe 🌹💋👀",
         coordinates: [53.34371807906372, -6.254580487582225],
         year: '2024',
-        emoji: '🌹'
+        emoji: '❤️'
     },
     {
         id: '2',
-        name: 'Sushi picnic in Malahide hehe',
+        name: 'Sushi picnic in Malahide hehe 🍣👗👅',
         coordinates: [53.4554960415778, -6.172615355934931],
         year: '2024',
         emoji: '🍣'
@@ -36,7 +36,7 @@ export const memoryLocations: MemoryLocation[] = [
     },
     {
         id: '6',
-        name: 'Chester Beatty Garden 🌸👖🌸',
+        name: 'Chester Beatty Garden 🌸👖👆🌸',
         coordinates: [53.34261777878294, -6.267113775098162],
         year: '2024',
         emoji: '🌸'
