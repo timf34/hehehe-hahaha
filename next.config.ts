@@ -5,6 +5,16 @@ const nextConfig = {
         // your project has ESLint errors.
         ignoreDuringBuilds: true,
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'media.tenor.com',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    },
 }
 
 export default nextConfig;

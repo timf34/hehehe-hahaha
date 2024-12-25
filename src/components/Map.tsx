@@ -139,7 +139,7 @@ export default function Map() {
                     .setHTML(
                         `<div class="text-pink-500 p-2">
                             <h3 class="font-bold mb-1 text-lg">${name}</h3>
-                            ${year ? `<p class="text-pink-400">💕 ${year}</p>` : ''}
+                            ${year ? `<p class="text-pink-400">${year}</p>` : ''}
                         </div>`
                     )
                     .addTo(mapInstance)

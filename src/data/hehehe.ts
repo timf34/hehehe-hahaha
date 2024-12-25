@@ -63,7 +63,7 @@ export const memoryLocations: MemoryLocation[] = [
     {
         id: '10',
         name: '31a, prawn tacos, Fred and ...',
-        coordinates: [53.341110234167424, -6.250062698994614],
+        coordinates: [53.331788624898806, -6.241216005548282],
         year: '2024',
     }
 ]
